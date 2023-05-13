@@ -25,3 +25,19 @@
     <% end%>
   <% end %>
 </div>
+
+<div>
+  <h2><%= "Attending:" %></h2>
+  <% if @attended_events.none? %>
+    <%= "#{@user.username} is not attending any events!" %>
+  <% else %>
+  <%= "#{@user.username} is attending #{@user.attended_events.length} events!" %>
+    <% @user.attended_events.each do |event| %>
+      <% if event.date < DateTime.now %>
+        <li><%= event.tile " (in the past)"%></li>
+      <% else %>
+      <li><%= event.title%><li>
+      <% end%>
+    <% end%>
+  <% end %>
+</div>
