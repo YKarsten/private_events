@@ -1,0 +1,27 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<h1><%= "#{@user.username}'s Profile" %></h1>
+<div>
+  <h2><%= "About" %></h2>
+  <div><%= "Username: #{@user.username}" %></div>
+  <div><%= "Email: #{@user.email}" %></div>
+</div>
+
+<div>
+  <h2><%= "Hosting:" %></h2>
+  <% if @hosted_events.none? %>
+    <%= "#{@user.username} has no hosting plans!" %>
+  <% else %>
+    <% @hosted_events.each do |event|%>
+    <div>
+      <h2><%= event.title %></h2>
+      <strong><%= event.description %><br></strong>
+      <ul>
+      <li><%= event.date %></li><br>
+      <li><%= event.location %></li><br>
+      </ul>
+    </div>
+    <% end%>
+  <% end %>
+</div>
