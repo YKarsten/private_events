@@ -1,0 +1,12 @@
+<h1> <%= "#{@event.title}" %> </h1>
+
+<div>
+    <div>
+        <%= "Host: "%>
+        <%# Display host name and link to user[:id]#show %>
+        <%= link_to "#{@user.username}", user_path(@user.id) %>
+    </div><br>
+    <div>What: <%= @event.body %></div>
+    <div>When: <%= @event.date %></div>
+    <div>Where: <%= @event.location %></div>
+</div>

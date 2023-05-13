@@ -5,6 +5,11 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def show
+    @event = Event.find(params[:id])
+    @user = @event.host
+  end
+
   def new
     @user = current_user
     @event = Event.new
