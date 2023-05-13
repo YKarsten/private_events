@@ -1,0 +1,18 @@
+<h1>Events#new</h1>
+<p>Find me in app/views/events/new.html.erb</p>
+
+<%= form_with model: @event do |form|%>
+    <%= form.label :title, "Title"%><br>
+    <%= form.text_field :title%><br>
+
+    <%= form.label :body, "Description"%><br>
+    <%= form.text_area :body %><br>
+
+    <%= form.label :date, "Date"%><br>
+    <%= form.date_field :date %><br>
+
+    <%= form.label :location, "Location"%><br>
+    <%= form.text_field :location %><br>
+
+    <%= form.submit %>
+<% end %>
