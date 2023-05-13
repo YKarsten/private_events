@@ -1,0 +1,12 @@
+<h1>Event#index</h1>
+<p>Find me in app/views/event/index.html.erb</p>
+
+<h1> Find some events you like and click "join" to show your interest!</h1>
+<% @events.each do |event| %>
+<div>
+    <%= event.title%><br>
+    <%= event.description%><br>
+    <%= event.date%><br>
+    <%= event.location%><br>
+</div>
+<% end %>
